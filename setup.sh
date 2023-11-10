@@ -11,3 +11,10 @@ mkdir /home/yannr/.crc
 sudo mount -t ext4 /dev/uservg/userlv /home/yannr/.crc
 
 wget https://developers.redhat.com/content-gateway/rest/mirror/pub/openshift-v4/clients/crc/latest/crc-linux-amd64.tar.xz
+tar -xvf crc-linux-amd64.tar.xz
+mkdir crc
+cp -r crc-linux-*-amd64/* crc/
+export PATH=$PATH:/home/yannr/crc
+
+crc setup
+crc start
