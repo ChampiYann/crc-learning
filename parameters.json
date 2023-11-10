@@ -1,0 +1,143 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westeurope"
+        },
+        "networkInterfaceName1": {
+            "value": "crc-host419_z1"
+        },
+        "enableAcceleratedNetworking": {
+            "value": true
+        },
+        "networkSecurityGroupName": {
+            "value": "CRC-host-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "SSH",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "22"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "virtualNetworkName": {
+            "value": "CRC-host-vnet"
+        },
+        "addressPrefixes": {
+            "value": [
+                "10.1.0.0/26"
+            ]
+        },
+        "subnets": {
+            "value": [
+                {
+                    "name": "default",
+                    "properties": {
+                        "addressPrefix": "10.1.0.0/27"
+                    }
+                }
+            ]
+        },
+        "publicIpAddressName1": {
+            "value": "CRC-host-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Static"
+        },
+        "publicIpAddressSku": {
+            "value": "Standard"
+        },
+        "pipDeleteOption": {
+            "value": "Delete"
+        },
+        "virtualMachineName": {
+            "value": "CRC-host"
+        },
+        "virtualMachineName1": {
+            "value": "CRC-host"
+        },
+        "virtualMachineComputerName1": {
+            "value": "CRC-host"
+        },
+        "virtualMachineRG": {
+            "value": "CRC-YANN"
+        },
+        "osDiskType": {
+            "value": "StandardSSD_LRS"
+        },
+        "osDiskDeleteOption": {
+            "value": "Delete"
+        },
+        "dataDisks1": {
+            "value": [
+                {
+                    "lun": 0,
+                    "createOption": "attach",
+                    "deleteOption": "Delete",
+                    "caching": "ReadOnly",
+                    "writeAcceleratorEnabled": false,
+                    "id": null,
+                    "name": "CRC-host_DataDisk_0",
+                    "storageAccountType": null,
+                    "diskSizeGB": null,
+                    "diskEncryptionSet": null
+                }
+            ]
+        },
+        "dataDiskResources1": {
+            "value": [
+                {
+                    "name": "CRC-host_DataDisk_0",
+                    "sku": "Premium_LRS",
+                    "properties": {
+                        "diskSizeGB": 1024,
+                        "creationData": {
+                            "createOption": "empty"
+                        }
+                    }
+                }
+            ]
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D8ads_v5"
+        },
+        "nicDeleteOption": {
+            "value": "Delete"
+        },
+        "hibernationEnabled": {
+            "value": false
+        },
+        "adminUsername": {
+            "value": "yannr"
+        },
+        "adminPublicKey": {
+            "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCRRM3USE1iMRug5eJgTjxi6EWrrHkRQzXHtQ4qJ+kSUEVBzvht5LuKS39R9McfZ+GBb7YTXtnxq+o5ijdEEFmQ4Zb7sdpzj3HfH+/JUnrFznupeHcB5VRv5Mkoe9RB+KBna7aFBr85ygEyDYNnf/mt2r44UnVcpHpEbFAnotyKz0ZKJCVq1f1o8Tw6genhzSIH+n5d0Sm1CPOu8+NOOwvfFTGKmSRaDZOl6wkhtOWx2qAh+7riEwCyN6OEvbh1ErKQH5wkm4AZfr3q7VroIzkoWWplFPXMRwt2WCy3bQoXYABYO1JqADR08rkBfu/UsWZgbqiyOkqKGkqOCt9nOTLvwwwk82+3ydxIIevKcC5k2ZkPqYDUlRa1zsWNCl2fKlgdi3x9NicbV16s6CJaVlSOmOI/D+eQAvggcS/vdtidSYdLRaCqxpzZOYSAf8AgKzLF4Knx/u8rds2gldf+m5lJPwFgIbiwmUMcOIupeJuoaqrwV/8zl2UopAd6Pv+uzMkXLotQvR9u+swLY6UjXCeJDg+OSNAJ1o6Lm/VGiVejSh2rOBYsGynxajIOi3vO+lv/D9PmJQhEd4vxGxUCP9S5jfzFRgqM/GwPEorP8MYRqSB7dhkc8T7Yg0DCwSLBnBjKRXjuvDsoMSiebRuMzJV8RCnFNLW6CoAQEs7Z5eYGpw== yannr@CI00253246"
+        },
+        "securityType": {
+            "value": "TrustedLaunch"
+        },
+        "secureBoot": {
+            "value": true
+        },
+        "vTPM": {
+            "value": true
+        },
+        "virtualMachine1Zone": {
+            "value": "1"
+        }
+    }
+}
