@@ -102,7 +102,7 @@
             "value": [
                 {
                     "name": "CRC-host_DataDisk_0",
-                    "sku": "Premium_LRS",
+                    "sku": "StandardSSD_LRS",
                     "properties": {
                         "diskSizeGB": 1024,
                         "creationData": {
